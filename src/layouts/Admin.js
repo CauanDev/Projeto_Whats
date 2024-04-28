@@ -120,7 +120,7 @@ export default function Dashboard(props) {
     <ChakraProvider theme={theme} resetCss={false}>
       <Sidebar
         routes={routes}
-        logoText={"VISION UI FREE"}
+        logoText={"TO AQUI UCETA"}
         display='none'
         sidebarVariant={sidebarVariant}
         {...rest}
@@ -128,13 +128,12 @@ export default function Dashboard(props) {
       <MainPanel
         ref={mainPanel}
         w={{
-          base: "100%",
-          xl: "calc(100% - 275px)",
+          base: "100%"          
         }}>
         <Portal>
           <AdminNavbar
             onOpen={onOpen}
-            logoText={"VISION UI FREE"}
+            logoText={"Aqui eu altero sidebar"}
             brandText={getActiveRoute(routes)}
             secondary={getActiveNavbar(routes)}
             fixed={fixed}
@@ -151,7 +150,6 @@ export default function Dashboard(props) {
             </PanelContainer>
           </PanelContent>
         ) : null}
-        <Footer />
         <Portal>
           <FixedPlugin
             secondary={getActiveNavbar(routes)}

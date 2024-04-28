@@ -24,7 +24,8 @@ import RTLPage from "views/RTL/RTLPage.js";
 import Profile from "views/Dashboard/Profile.js";
 import SignIn from "views/Pages/SignIn.js";
 import SignUp from "views/Pages/SignUp.js";
-import Home from "views/Home/home.js"
+import HomeLayout from 'layouts/Home'
+import Home from "views/Home/home.js";
 
 import {
   HomeIcon,
@@ -38,20 +39,14 @@ import {
 
 var dashRoutes = [
   {
-    path: "/dashboard",
-    name: "Dashboard",
+    path: "/home",
+    name: "Home",
     rtlName: "لوحة القيادة",
     icon: <HomeIcon color='inherit' />,
     component: Dashboard,
     layout: "/admin",
   },
-  {
-    path: "/home",
-    name: "home",
-    icon: <RocketIcon color='inherit' />, // Substitua NewPageIcon pelo ícone desejado
-    component: Home,
-    layout: "/home",
-  },
+
   {
     path: "/tables",
     name: "Tables",

@@ -93,14 +93,12 @@ export default function AdminNavbar(props) {
       transition-property='box-shadow, background-color, filter, border'
       transitionTimingFunction='linear, linear, linear, linear'
       alignItems={{ xl: "center" }}
-      borderRadius='16px'
       display='flex'
-      minH='75px'
       justifyContent={{ xl: "center" }}
-      lineHeight='25.6px'
-      mx='auto'
+      lineHeight='18px'
+      maxHeight='6px'
       mt={secondaryMargin}
-      pb='8px'
+      pb='3px'
       left={document.documentElement.dir === "rtl" ? "30px" : ""}
       right={document.documentElement.dir === "rtl" ? "" : "30px"}
       px={{
@@ -110,9 +108,9 @@ export default function AdminNavbar(props) {
       ps={{
         xl: "12px",
       }}
-      pt='8px'
-      top='18px'
-      w={{ sm: "calc(100vw - 60px)", xl: "calc(100vw - 75px - 275px)" }}>
+      pt='5px'
+      top='15px'
+      w={{ sm: "calc(100vw - 60px)", xl: "calc(100vw - 5px - 275px)" }}>
       <Flex
         w='100%'
         flexDirection={{
@@ -120,7 +118,7 @@ export default function AdminNavbar(props) {
           md: "row",
         }}
         alignItems={{ xl: "center" }}>
-        <Box mb={{ sm: "8px", md: "0px" }}>
+        <Box mb={{ sm: "5px", md: "0px" }}>
           <Breadcrumb>
             <BreadcrumbItem color='#A0AEC0'>
               <BreadcrumbLink href='#' color='#A0AEC0'>
@@ -134,6 +132,7 @@ export default function AdminNavbar(props) {
               </BreadcrumbLink>
             </BreadcrumbItem>
           </Breadcrumb>
+
           {/* Here we create navbar brand, based on route name */}
           <Link
             color={mainText}
@@ -153,15 +152,16 @@ export default function AdminNavbar(props) {
             {brandText}
           </Link>
         </Box>
-        <Box ms='auto' w={{ sm: "100%", md: "unset" }}>
+        
+        <Box ms='auto' w={{ sm: "80%", md: "unset" }}>
           <AdminNavbarLinks
             onOpen={props.onOpen}
             logoText={props.logoText}
-            secondary={props.secondary}
-            fixed={props.fixed}
+          
           />
         </Box>
       </Flex>
+      
     </Flex>
   );
 }

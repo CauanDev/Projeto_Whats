@@ -219,7 +219,7 @@ function Sidebar(props) {
   // SIDEBAR
   return (
     <Box ref={mainPanel}>
-      <Box display={{ sm: "none", xl: "block" }} position='fixed'>
+      <Box display={{ sm: "none", xl: "block" }} position='fixed' overflowY="hidden">
         <Box
           bg={sidebarBg}
           backdropFilter='blur(10px)'
@@ -236,7 +236,10 @@ function Sidebar(props) {
           ps='20px'
           pe='20px'
           m={sidebarMargins}
-          borderRadius={sidebarRadius}>
+          borderRadius={sidebarRadius}
+          overflowY="hidden"
+          >
+
           <Box>{brand}</Box>
           <Stack direction='column' mb='40px'>
             <Box>{links}</Box>
