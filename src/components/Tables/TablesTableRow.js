@@ -25,8 +25,31 @@ import {
   Text,
   Tr,
   useColorModeValue,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  FormControl,
+  FormLabel,
+  FormHelperText,
+  Input,
+  ModalFooter,
+  useDisclosure,
 } from "@chakra-ui/react";
+import { CloseIcon,PlusSquareIcon, EditIcon,SettingsIcon, SupportIcon ,StatsIcon } from "@chakra-ui/icons";
 import React from "react";
+import Card from 'components/Card/Card.js';
+import CardBody from 'components/Card/CardBody.js';
+import CardHeader from 'components/Card/CardHeader.js';
+import { Box, Spacer,ChakraProvider } from "@chakra-ui/react";
+import theme from "theme/themeAdmin.js";
+import bgBody from "assets/img/background-body-admin.png";
+import { bgAdmin } from "theme/bgAdmin";
+import { ActionLogo } from "components/Icons/Icons";
+
+
 
 function TablesTableRow(props) {
   const {
@@ -36,21 +59,27 @@ function TablesTableRow(props) {
     subdomain,
     domain,
     status,
+    index,
     date,
     lastItem,
+    statusFunc    
   } = props;
   const textColor = useColorModeValue("gray.700", "white");
   const bgStatus = useColorModeValue("gray.400", "#1a202c");
   const colorStatus = useColorModeValue("white", "gray.400");
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
+  const SeuModal = ({ isOpen, onClose }) => {
+    const [componenteAtivo, setComponenteAtivo] = useState(null);
+  }
 
   return (
     <Tr>
       <Td
-        minWidth={{ sm: "250px" }}
         ps='0px'
         border={lastItem ? "none" : null}
         borderBottomColor='#56577A'>
-        <Flex align='center' py='.8rem' minWidth='100%' flexWrap='nowrap'>
+        <Flex align='center' py='.5rem' minWidth='10%' flexWrap='nowrap'>
           <Avatar
             src={logo}
             w='50px'
@@ -72,21 +101,12 @@ function TablesTableRow(props) {
           </Flex>
         </Flex>
       </Td>
-
-      <Td
-        border={lastItem ? "none" : null}
-        borderBottomColor='#56577A'
-        minW='150px'>
-        <Flex direction='column'>
-          <Text fontSize='sm' color='#fff' fontWeight='normal'>
-            {domain}
-          </Text>
-          <Text fontSize='sm' color='gray.400' fontWeight='normal'>
-            {subdomain}
-          </Text>
-        </Flex>
-      </Td>
       <Td border={lastItem ? "none" : null} borderBottomColor='#56577A'>
+       {/* 
+       
+       Simbolo de Status  
+       
+       */}
         <Badge
           bg={status === "Online" ? "green.400" : "transparent"}
           color={status === "Online" ? "white" : colorStatus}
@@ -94,25 +114,53 @@ function TablesTableRow(props) {
           p='3px 10px'
           borderRadius='8px'
           border={status === "Online" ? "none" : "1px solid #fff"}
-          fontWeight='normal'>
+          fontWeight='normal'
+          onClick={statusFunc}
+          cursor="pointer">
           {status}
         </Badge>
+
       </Td>
       <Td border={lastItem ? "none" : null} borderBottomColor='#56577A'>
         <Text fontSize='sm' color='#fff' fontWeight='normal'>
           {date}
         </Text>
       </Td>
+
       <Td border={lastItem ? "none" : null} borderBottomColor='#56577A'>
-        <Button p='0px' bg='transparent' variant='no-hover'>
-          <Text
-            fontSize='sm'
-            color='gray.400'
-            fontWeight='bold'
-            cursor='pointer'>
-            Edit
-          </Text>
-        </Button>
+        <EditIcon onClick={onOpen}/>
+        <Modal  isOpen={isOpen} onClose={onClose} size="3xl"  closeOnOverlayClick={false}  >
+        <ModalOverlay />
+      <ModalContent bgImage={bgBody} borderRadius="20px" >
+       <ModalHeader>Modal</ModalHeader>
+       <ModalCloseButton />
+
+
+
+
+        <Flex>
+            {/* Sidebar */}
+          <Box w="25%"  p="4" className="flex flex-col">
+            <Button px={'10%'} onClick={() => console.log("aqui")} mb="2">Iniciar Sessão</Button>
+            
+            <Button px={'10%'} onClick={() => console.log("aqui")} mb="2">Contatos</Button>
+            <Button onClick={() => console.log("aqui")} mb="2">Grupos</Button>
+            <Button onClick={() => console.log("aqui")} mb="2">Automação de Grupos</Button>
+            <Button leftIcon={<ActionLogo/>} onClick={() => console.log("aqui")} mb="2">Ação</Button>
+            <Button leftIcon={<EditIcon/>} onClick={() => console.log("aqui")} mb="2">Opções</Button>
+
+            
+          </Box>
+            {/* Conteúdo do componente selecionado */}
+            
+            <Box w="75%" p="4">
+            {name}
+            </Box>
+          </Flex>
+
+        </ModalContent>
+      </Modal>
+
       </Td>
     </Tr>
   );

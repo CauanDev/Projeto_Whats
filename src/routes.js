@@ -18,6 +18,7 @@
 
 // import
 import Dashboard from "views/Dashboard/Dashboard.js";
+import Contas from "views/Dashboard/Contas.js";
 import Tables from "views/Dashboard/Tables.js";
 import Billing from "views/Dashboard/Billing.js";
 import RTLPage from "views/RTL/RTLPage.js";
@@ -35,6 +36,8 @@ import {
   DocumentIcon,
   RocketIcon,
   SupportIcon,
+  ProfileIcon,
+  SettingsIcon  
 } from "components/Icons/Icons";
 
 var dashRoutes = [
@@ -46,7 +49,14 @@ var dashRoutes = [
     component: Dashboard,
     layout: "/admin",
   },
-
+  {
+    path: "/contas",
+    name: "Contas",
+    rtlName: "لوحة القيادة",
+    icon: <ProfileIcon color='inherit' />,
+    component: Contas,
+    layout: "/admin",
+  },
   {
     path: "/tables",
     name: "Tables",

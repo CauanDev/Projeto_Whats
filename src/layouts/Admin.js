@@ -120,7 +120,7 @@ export default function Dashboard(props) {
     <ChakraProvider theme={theme} resetCss={false}>
       <Sidebar
         routes={routes}
-        logoText={"TO AQUI UCETA"}
+        logoText={"Arquivo Admin.js"}
         display='none'
         sidebarVariant={sidebarVariant}
         {...rest}
