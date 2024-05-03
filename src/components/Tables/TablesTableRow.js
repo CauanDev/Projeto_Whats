@@ -30,7 +30,6 @@ import {
   ModalContent,
   ModalHeader,
   ModalCloseButton,
-  ModalBody,
   FormControl,
   FormLabel,
   FormHelperText,
@@ -45,12 +44,20 @@ import CardBody from 'components/Card/CardBody.js';
 import CardHeader from 'components/Card/CardHeader.js';
 import { Box, Spacer,ChakraProvider } from "@chakra-ui/react";
 import theme from "theme/themeAdmin.js";
-import bgBody from "assets/img/background-body-admin.png";
 import { bgAdmin } from "theme/bgAdmin";
-import { ActionLogo } from "components/Icons/Icons";
+import PainelModal from "components/Modal/Modal";
 
 
 
+import { BiPlayCircle ,BiCategory,BiCog,BiSolidUserPin,BiSolidUserAccount,BiSolidUserRectangle } from "react-icons/bi";
+
+
+import Iniciar from "components/componentes_contas/Iniciar";
+import Contatos from "components/componentes_contas/Contatos";
+import Automacao from "components/componentes_contas/Automacao"
+import Grupos from "components/componentes_contas/Grupos"
+import Opcoes from  "components/componentes_contas/Opcoes"
+import Acoes from "components/componentes_contas/Acao"
 function TablesTableRow(props) {
   const {
     logo,
@@ -68,6 +75,9 @@ function TablesTableRow(props) {
   const bgStatus = useColorModeValue("gray.400", "#1a202c");
   const colorStatus = useColorModeValue("white", "gray.400");
   const { isOpen, onOpen, onClose } = useDisclosure()
+  //const componentes= [<Iniciar/>,<Acoes/>,<Automacao/>,<Contatos/>,<Opcoes/>,<Grupos/>]
+  const componentes= [Iniciar,Contatos,Grupos,Automacao,Acoes,Opcoes]
+  const icons = [<BiPlayCircle />, <BiSolidUserRectangle />, <BiSolidUserAccount />, <BiSolidUserPin />, <BiCategory />, <BiCog />];
 
   const SeuModal = ({ isOpen, onClose }) => {
     const [componenteAtivo, setComponenteAtivo] = useState(null);
@@ -129,37 +139,25 @@ function TablesTableRow(props) {
 
       <Td border={lastItem ? "none" : null} borderBottomColor='#56577A'>
         <EditIcon onClick={onOpen}/>
+
+        
         <Modal  isOpen={isOpen} onClose={onClose} size="3xl"  closeOnOverlayClick={false}  >
-        <ModalOverlay />
-      <ModalContent bgImage={bgBody} borderRadius="20px" >
-       <ModalHeader>Modal</ModalHeader>
-       <ModalCloseButton />
+        <PainelModal
 
+          titles =  {["Iniciar Sessão","Contatos","Grupos","Automação de Grupos","Ação","Opções"]}
+          icons =  {icons}
+          name = {name}
+          index = {index}
+          components = {componentes}
 
+        
+        />
+        </Modal>        
+        
+        
+        
+        
 
-
-        <Flex>
-            {/* Sidebar */}
-          <Box w="25%"  p="4" className="flex flex-col">
-            <Button px={'10%'} onClick={() => console.log("aqui")} mb="2">Iniciar Sessão</Button>
-            
-            <Button px={'10%'} onClick={() => console.log("aqui")} mb="2">Contatos</Button>
-            <Button onClick={() => console.log("aqui")} mb="2">Grupos</Button>
-            <Button onClick={() => console.log("aqui")} mb="2">Automação de Grupos</Button>
-            <Button leftIcon={<ActionLogo/>} onClick={() => console.log("aqui")} mb="2">Ação</Button>
-            <Button leftIcon={<EditIcon/>} onClick={() => console.log("aqui")} mb="2">Opções</Button>
-
-            
-          </Box>
-            {/* Conteúdo do componente selecionado */}
-            
-            <Box w="75%" p="4">
-            {name}
-            </Box>
-          </Flex>
-
-        </ModalContent>
-      </Modal>
 
       </Td>
     </Tr>
