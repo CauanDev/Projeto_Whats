@@ -22,12 +22,14 @@ import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import AuthLayout from "layouts/Auth.js";
 import AdminLayout from "layouts/Admin.js";
+import CampanhaLayout from "layouts/Campanhas.js";
 
 ReactDOM.render(
   <HashRouter>
     <Switch>
       <Route path={`/auth`} component={AuthLayout} />
       <Route path={`/admin`} component={AdminLayout} />
+      <Route path={`/teste`} component={CampanhaLayout} />
       <Redirect from={`/`} to='/admin/home' />
     </Switch>
   </HashRouter>,

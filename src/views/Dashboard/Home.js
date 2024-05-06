@@ -51,7 +51,7 @@ import BarChart from 'components/Charts/BarChart';
 import LineChart from 'components/Charts/LineChart';
 import IconBox from 'components/Icons/IconBox';
 import Contas from 'components/Contas/contas';
-import Campanha from "components/Campanhas/campanhas"
+import Campanha from "components/campanhas_home/campanhas"
 // Icons
 import { CartIcon, DocumentIcon, GlobeIcon, RocketIcon, StatsIcon, WalletIcon } from 'components/Icons/Icons.js';
 import DashboardTableRow from 'components/Tables/DashboardTableRow';
@@ -80,9 +80,6 @@ function generateContas() {
     return tablesTableData;
 }
 
-function generateCampanhas() {
-    return tablesTableData;
-}
 
 useEffect(() => {
     handleClick();
@@ -90,7 +87,7 @@ useEffect(() => {
 
 function handleClick() {
     const newContas = generateContas();
-    const newCampanhas = generateCampanhas();
+    const newCampanhas = generateContas();
     setContas(newContas);
     setCampanhas(newCampanhas);
 }

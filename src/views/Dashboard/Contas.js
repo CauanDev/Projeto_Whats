@@ -106,8 +106,8 @@ function Tables() {
                     lastItem={index === arr.length - 1 ? true : false}                  
                     statusFunc={()=>{
                        
-                      tablesTableData[index].status = (row.status === "Online" ? "Offline" : "Online");     
-                      console.log(tablesTableData[index].status + " " + index)       
+                    tablesTableData[index].status = (row.status === "Online" ? "Offline" : "Online");     
+                    console.log(tablesTableData[index].status + " " + index)       
                     }}
                   />
                 );

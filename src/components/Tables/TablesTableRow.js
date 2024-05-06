@@ -46,18 +46,8 @@ import { Box, Spacer,ChakraProvider } from "@chakra-ui/react";
 import theme from "theme/themeAdmin.js";
 import { bgAdmin } from "theme/bgAdmin";
 import PainelModal from "components/Modal/Modal";
-
-
-
-import { BiPlayCircle ,BiCategory,BiCog,BiSolidUserPin,BiSolidUserAccount,BiSolidUserRectangle } from "react-icons/bi";
-
-
-import Iniciar from "components/componentes_contas/Iniciar";
-import Contatos from "components/componentes_contas/Contatos";
-import Automacao from "components/componentes_contas/Automacao"
-import Grupos from "components/componentes_contas/Grupos"
-import Opcoes from  "components/componentes_contas/Opcoes"
-import Acoes from "components/componentes_contas/Acao"
+import { componentsContas } from "variables/icons/components";
+import { iconsContas } from "variables/icons/components";
 function TablesTableRow(props) {
   const {
     logo,
@@ -76,9 +66,6 @@ function TablesTableRow(props) {
   const colorStatus = useColorModeValue("white", "gray.400");
   const { isOpen, onOpen, onClose } = useDisclosure()
   //const componentes= [<Iniciar/>,<Acoes/>,<Automacao/>,<Contatos/>,<Opcoes/>,<Grupos/>]
-  const componentes= [Iniciar,Contatos,Grupos,Automacao,Acoes,Opcoes]
-  const icons = [<BiPlayCircle />, <BiSolidUserRectangle />, <BiSolidUserAccount />, <BiSolidUserPin />, <BiCategory />, <BiCog />];
-
   const SeuModal = ({ isOpen, onClose }) => {
     const [componenteAtivo, setComponenteAtivo] = useState(null);
   }
@@ -145,10 +132,10 @@ function TablesTableRow(props) {
         <PainelModal
 
           titles =  {["Iniciar Sessão","Contatos","Grupos","Automação de Grupos","Ação","Opções"]}
-          icons =  {icons}
+          icons =  {iconsContas}
           name = {name}
           index = {index}
-          components = {componentes}
+          components = {componentsContas}
 
         
         />

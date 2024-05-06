@@ -17,16 +17,18 @@
 */
 
 // import
-import Dashboard from "views/Dashboard/Dashboard.js";
+import Home from "views/Dashboard/Home.js";
 import Contas from "views/Dashboard/Contas.js";
+import Campanhas from "views/Dashboard/Campanhas.js";
+
+
+
 import Tables from "views/Dashboard/Tables.js";
 import Billing from "views/Dashboard/Billing.js";
 import RTLPage from "views/RTL/RTLPage.js";
 import Profile from "views/Dashboard/Profile.js";
 import SignIn from "views/Pages/SignIn.js";
 import SignUp from "views/Pages/SignUp.js";
-import HomeLayout from 'layouts/Home'
-import Home from "views/Home/home.js";
 
 import {
   HomeIcon,
@@ -37,7 +39,6 @@ import {
   RocketIcon,
   SupportIcon,
   ProfileIcon,
-  SettingsIcon  
 } from "components/Icons/Icons";
 
 var dashRoutes = [
@@ -46,7 +47,7 @@ var dashRoutes = [
     name: "Home",
     rtlName: "لوحة القيادة",
     icon: <HomeIcon color='inherit' />,
-    component: Dashboard,
+    component: Home,
     layout: "/admin",
   },
   {
@@ -58,12 +59,12 @@ var dashRoutes = [
     layout: "/admin",
   },
   {
-    path: "/tables",
-    name: "Tables",
+    path: "/campanhas",
+    name: "Campanhas",
     rtlName: "لوحة القيادة",
-    icon: <StatsIcon color='inherit' />,
-    component: Tables,
-    layout: "/admin",
+    icon: <RocketIcon color='inherit' />,
+    component: Campanhas,
+    layout: "/teste",
   },
   {
     path: "/billing",
