@@ -134,8 +134,7 @@ export default function Dashboard(props) {
           <AdminNavbar
             onOpen={onOpen}
             logoText={"Aqui eu altero sidebar"}
-            brandText={getActiveRoute(routes)}
-            secondary={getActiveNavbar(routes)}
+
             fixed={fixed}
             {...rest}
           />

@@ -64,7 +64,7 @@ var dashRoutes = [
     rtlName: "لوحة القيادة",
     icon: <RocketIcon color='inherit' />,
     component: Campanhas,
-    layout: "/teste",
+    layout: "/admin",
   },
   {
     path: "/billing",

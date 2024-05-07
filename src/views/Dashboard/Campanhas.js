@@ -1,73 +1,39 @@
-/*!
+import { Box, Flex, Text } from '@chakra-ui/react';
+import { useState } from 'react';
+import { componentesCampanha } from 'variables/icons/components';
 
-=========================================================
-* Vision UI Free Chakra - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/vision-ui-free-chakra
-* Copyright 2021 Creative Tim (https://www.creative-tim.com/)
-* Licensed under MIT (https://github.com/creativetimofficial/vision-ui-free-chakra/blob/master LICENSE.md)
-
-* Design and Coded by Simmmple & Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-// Chakra imports
-import {
-	Box,
-	CircularProgress,
-	CircularProgressLabel,
-	Flex,
-	Grid,
-	Icon,
-	Progress,
-	SimpleGrid,
-	Spacer,
-	Stack,
-	Stat,
-	StatHelpText,
-	StatLabel,
-	StatNumber,
-	Table,
-	Tbody,
-	Text,
-	Th,
-	Thead,
-	Tr,
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbSeparator,
-} from '@chakra-ui/react';
-
-import {
-    Navbar,
-    Typography,
-    IconButton,
-    Button,
-    Input,
-  } from "@material-tailwind/react";
-
-// Data
-import {
-	barChartDataDashboard,
-	barChartOptionsDashboard,
-	lineChartDataDashboard,
-	lineChartOptionsDashboard
-} from 'variables/charts';
-import { dashboardTableData, timelineData } from 'variables/general';
-import { tablesTableData } from 'variables/general';
 export default function Campanhas() {
+  const [componenteAtual, setComponenteAtual] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(null);
+  const titles = ["Contas Associadas","Diagnósticos","Visão Geral"," Grupos"]
+  const handleClick = (Componente, index) => {
+    setComponenteAtual(<Componente />);
+    setActiveIndex(index);
+  };
 
-
-	
-	return (
-		
-		<Flex flexDirection='row' pt={{ base: '120px', md: '150px' }}>
-            teste 
-		</Flex>
-	);
+  return (
+    <>
+      <Box borderBottom="1px" borderColor="black.500" mt={'2%'}>
+        <Flex gap={5} ml={6} mt={5}>
+          {componentesCampanha.map((componente, index) => (
+            <Text
+              key={index}
+              fontSize="lg"
+              pb={2}
+              color="#fff"
+              cursor="pointer"
+              borderBottom={activeIndex === index ? "5px solid white" : "5px solid transparent"}
+              _hover={{ borderColor: "white" }}
+              onClick={() => handleClick(componente, index)}
+            >
+              {titles[index]}
+            </Text>
+          ))}
+        </Flex>
+      </Box>
+	  <Box p={4}>
+		{componenteAtual}
+	  </Box>
+    </>
+  );
 }

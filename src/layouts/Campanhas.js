@@ -117,15 +117,9 @@ export default function CampanhaLayout(props) {
   document.documentElement.dir = "ltr";
   // Chakra Color Mode
   return (
-    <ChakraProvider theme={theme} resetCss={false}>
-      <Sidebar
-        routes={routes}
-        logoText={"Arquivo Admin.js"}
-        display='none'
-        sidebarVariant={sidebarVariant}
-        {...rest}
-      />
-    
+    <ChakraProvider theme={theme} >
+
+      
     </ChakraProvider>
   );
 }

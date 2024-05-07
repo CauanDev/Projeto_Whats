@@ -7,11 +7,14 @@ import Opcoes from  "components/componentes_contas/Opcoes"
 import Acoes from "components/componentes_contas/Acao"
 import InfGeral from "components/Contas/Modal/infGeral";
 import DetalhesCampanhas from "components/Contas/Modal/detalhes";
-
+import ContasAssociadas from "components/campanhas/ContasAssociadas";
+import Diagnosticos from "components/campanhas/Diagnosticos";
+import VisaoGeral from "components/campanhas/VisaoGeral";
+import GruposCampanha from "components/campanhas/Grupo";
 import Info from "components/campanhas_home/Modal/InfGeral";
 import Detalhes from "components/campanhas_home/Modal/detalhes";
 export const componentsContas = [Iniciar,Contatos,Grupos,Automacao,Acoes,Opcoes]
 export const iconsContas = [<BiPlayCircle />, <BiSolidUserRectangle />, <BiSolidUserAccount />, <BiSolidUserPin />, <BiCategory />, <BiCog />];
 export const componentsContasHome = [InfGeral,Detalhes]
 export const componentsCampanhasHome = [Info, DetalhesCampanhas]
- 
+export const componentesCampanha = [ContasAssociadas,Diagnosticos,VisaoGeral,GruposCampanha]
