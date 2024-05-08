@@ -20,7 +20,7 @@
 import Home from "views/Dashboard/Home.js";
 import Contas from "views/Dashboard/Contas.js";
 import Campanhas from "views/Dashboard/Campanhas.js";
-
+import ListCampanhas from "views/Dashboard/ChooseCampanhas";
 
 
 import Tables from "views/Dashboard/Tables.js";
@@ -63,7 +63,7 @@ var dashRoutes = [
     name: "Campanhas",
     rtlName: "لوحة القيادة",
     icon: <RocketIcon color='inherit' />,
-    component: Campanhas,
+    component: ListCampanhas,
     layout: "/admin",
   },
   {
