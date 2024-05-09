@@ -32,7 +32,6 @@ import SignUp from "views/Pages/SignUp.js";
 
 import {
   HomeIcon,
-  StatsIcon,
   CreditIcon,
   PersonIcon,
   DocumentIcon,
@@ -49,6 +48,15 @@ var dashRoutes = [
     icon: <HomeIcon color='inherit' />,
     component: Home,
     layout: "/admin",
+  },
+  {
+    path: "/campanha/:id",
+    name: "Campanha",
+    rtlName: "لوحة القيادة",
+    icon: <HomeIcon color='inherit' />,
+    component: Campanhas,
+    layout: "/admin",
+    invisible: true
   },
   {
     path: "/contas",

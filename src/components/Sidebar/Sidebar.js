@@ -271,7 +271,9 @@ export function SidebarResponsive(props) {
     const inactiveColor = "white";
 
     return routes.map((prop, key) => {
-      if (prop.redirect) {
+      if(!prop.invisible){
+        console.log(prop)
+        if (prop.redirect) {``
         return null;
       }
       if (prop.category) {
@@ -299,6 +301,8 @@ export function SidebarResponsive(props) {
           </>
         );
       }
+      
+      
       return (
         <NavLink to={prop.layout + prop.path}>
           {activeRoute(prop.layout + prop.path) === "active" ? (
@@ -400,7 +404,7 @@ export function SidebarResponsive(props) {
           )}
         </NavLink>
       );
-    });
+    }});
   };
   const { logoText, routes, iconColor, ...rest } = props;
 

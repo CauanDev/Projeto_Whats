@@ -133,7 +133,7 @@ export default function Dashboard(props) {
         <Portal>
           <AdminNavbar
             onOpen={onOpen}
-            logoText={"Aqui eu altero sidebar"}
+            logoText={"Aqui eu altero sidebar ne?"}
 
             fixed={fixed}
             {...rest}

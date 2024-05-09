@@ -29,6 +29,8 @@ ReactDOM.render(
     <Switch>
       <Route path={`/auth`} component={AuthLayout} />
       <Route path={`/admin`} component={AdminLayout} />
+      <Route path={`/admin/campanhas/:id`} component={Campanhas} />
+
       <Redirect from={`/`} to='/admin/home' />
     </Switch>
   </HashRouter>,

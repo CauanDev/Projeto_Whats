@@ -1,7 +1,7 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 import { useState } from 'react';
 import { componentesCampanha } from 'variables/icons/components';
-
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 export default function Campanhas() {
   const [componenteAtual, setComponenteAtual] = useState(null);
   const [activeIndex, setActiveIndex] = useState(null);
@@ -10,9 +10,11 @@ export default function Campanhas() {
     setComponenteAtual(<Componente />);
     setActiveIndex(index);
   };
+  const { id } = useParams();
 
   return (
     <>
+    
       <Box borderBottom="1px" borderColor="black.500" mt={'2%'}>
         <Flex gap={5} ml={6} mt={5}>
           {componentesCampanha.map((componente, index) => (
