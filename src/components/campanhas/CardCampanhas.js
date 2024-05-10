@@ -22,7 +22,7 @@ export default function CardCampanhas(props){
             </Box>
             <Spacer/>
             <Link to={`/admin/campanha/${index}`}>LINK</Link>
-               <ArrowForwardIcon cursor={'pointer'} fontSize={"xl"} />      
+            <ArrowForwardIcon cursor={'pointer'} fontSize={"xl"} />      
         </Flex>    
         </Box>
     )

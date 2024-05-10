@@ -28,7 +28,7 @@ export default function Campanhas() {
               _hover={{ borderColor: "white" }}
               onClick={() => handleClick(componente, index)}
             >
-              {titles[index]}
+              {titles[index] +" "+id}
             </Text>
           ))}
         </Flex>

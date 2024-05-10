@@ -25,16 +25,9 @@ import bgBody from "assets/img/background-body-admin.png";
 
 export default function PainelModal(props){
   const [componenteAtual, setComponenteAtual] = useState(null);
-  const [isHovered, setIsHovered] = useState(false);
 
   const handleClick = (Componente, props) => {
       setComponenteAtual(() => <Componente {...props} />);
-  };
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-  const handleMouseLeave = () => {
-    setIsHovered(false);
   };
   const {
       titles,
