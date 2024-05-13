@@ -2,11 +2,6 @@ import {
     Avatar,
     Badge,
     Flex,
-    Td,
-    Text,
-    Tr,
-    useColorModeValue,
-    Modal,
     ModalOverlay,
     ModalContent,
     ModalHeader,
@@ -18,15 +13,16 @@ import {
   import { Input,InputGroup,InputRightElement } from "@chakra-ui/react";
   import bgBody from "assets/img/background-body-admin.png";
   import { tablesTableData } from "variables/general";
-
+  import Card from "components/Card/Card";
   export default function ModalCreate(props){
     const {height} = props
     const components = tablesTableData;
-    const teste = false
+    const teste = true
     return (
         <>
             <ModalOverlay />
-            <ModalContent bgImage={bgBody} borderRadius="20px"  border="1px solid gray" boxShadow='lg' h={height}>
+            <ModalContent bgImage={bgBody} borderRadius="20px"   boxShadow='lg' h={height}>
+                <Card border="1px solid gray">
                 <ModalHeader fontSize='xl'  color='#fff' fontWeight='bold'alignSelf="center">Criar Campanha</ModalHeader>
                 <ModalCloseButton fontSize='lg'color='#fff' fontWeight='normal' />  
                 
@@ -49,14 +45,12 @@ import {
                         </InputGroup>
                     </Box>
                     <Flex justifyContent="center">
-                    <Button colorScheme={teste ? "green" : "gray"} isLoading={teste} loadingText="Loading" color="black">
-  Criar
-</Button>
+                    <Button colorScheme={teste ? "green" : "gray"} isLoading={!teste} loadingText="Criar" color="black">Criar</Button>
                     </Flex>
                 </Flex>
             </Box>
 
-                 
+            </Card>
             </ModalContent>
         </>
     );

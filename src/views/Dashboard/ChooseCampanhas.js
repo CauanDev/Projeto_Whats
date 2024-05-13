@@ -37,7 +37,8 @@ export default function ListCampanhas(){
 
             </Box>
             <Box>
-                <Flex direction={"column"} gap={3}>
+            <Box overflowY="auto" maxHeight={'60vh'}>
+                <Flex direction={"column"} gap={2} >
                     
                 {    tablesTableData.map((row, index)=>{
                     return (
@@ -50,8 +51,21 @@ export default function ListCampanhas(){
                         />                        
                     )
 
-                }) }                    
+                }) }   
+                   {    tablesTableData.map((row, index)=>{
+                    return (
+                        <CardCampanhas
+                        logo = {row.logo}
+                        index = {index}
+                        name = {row.name}
+                        subName = {row.domain}
+                        status = {false}
+                        />                        
+                    )
+
+                }) }  
                 </Flex>
+                </Box>
             </Box>
             </Flex>
         </Box>

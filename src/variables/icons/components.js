@@ -17,4 +17,4 @@ export const componentsContas = [Iniciar,Contatos,Grupos,Automacao,Acoes,Opcoes]
 export const iconsContas = [<BiPlayCircle />, <BiSolidUserRectangle />, <BiSolidUserAccount />, <BiSolidUserPin />, <BiCategory />, <BiCog />];
 export const componentsContasHome = [InfGeral,Detalhes]
 export const componentsCampanhasHome = [Info, DetalhesCampanhas]
-export const componentesCampanha = [ContasAssociadas,Diagnosticos,VisaoGeral,GruposCampanha]
+export const componentesCampanha = [VisaoGeral,ContasAssociadas,Diagnosticos,GruposCampanha]
