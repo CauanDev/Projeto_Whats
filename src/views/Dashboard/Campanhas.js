@@ -9,7 +9,7 @@ export default function Campanhas() {
   const [activeIndex, setActiveIndex] = useState(null);
   const titles = ["Visão Geral","Contas Associadas","Diagnósticos"," Grupos"]
   const handleClick = (Componente, index) => {
-    setComponenteAtual(<Componente />);
+    setComponenteAtual(<Componente id={index} />);
     setActiveIndex(index);
   };
   const { id } = useParams();
@@ -52,8 +52,7 @@ export default function Campanhas() {
         </Flex>
       </Box>
 	  <Box p={4}>
-		{componenteAtual}
-	  </Box>
+    {componenteAtual}	  </Box>
     </>
   );
 }

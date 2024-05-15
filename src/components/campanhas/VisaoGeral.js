@@ -1,7 +1,10 @@
 import { Box, Flex, Spacer, Text,Switch, Input, Button } from '@chakra-ui/react';
 import Card from 'components/Card/Card';
 import { BiLogIn,BiLogOut,BiCategoryAlt,BiPencil,BiPaperclip,BiPaperPlane} from "react-icons/bi";
-export default function VisaoGeral(){
+export default function VisaoGeral(props){
+    const {
+      id
+    } = props
     return(
         (
             <>

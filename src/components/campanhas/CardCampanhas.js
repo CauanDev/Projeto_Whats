@@ -10,6 +10,7 @@ export default function CardCampanhas(props){
         name,
         subName,
         status,
+        
     } = props
     return(
     <Card p={4} color='white' border='1px' borderColor='gray.500' borderRadius="15px" >
@@ -22,10 +23,13 @@ export default function CardCampanhas(props){
             <Text fontSize='md' color='#fff'>{name}</Text>
             <Text fontSize='md' color='#fff'>{subName}</Text>
             </Box>
-            <Spacer/>
+            <Spacer/>            
             <Link to={`/admin/campanha/${index}`}>
-            <ArrowForwardIcon cursor={'pointer'} fontSize={"2xl"}/>      
-            </Link>
+            <ArrowForwardIcon cursor={'pointer'} fontSize={"2xl"}/>    
+            </Link>                          
+            
+
+
         </Flex>    
         
         </Box>

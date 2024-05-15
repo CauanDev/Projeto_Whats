@@ -7,8 +7,8 @@ import Opcoes from  "components/componentes_contas/Opcoes"
 import Acoes from "components/componentes_contas/Acao"
 import InfGeral from "components/Contas/Modal/infGeral";
 import DetalhesCampanhas from "components/Contas/Modal/detalhes";
-import ContasAssociadas from "components/campanhas/ContasAssociadas";
-import Diagnosticos from "components/campanhas/Diagnosticos";
+import ContasAssociadas from "components/campanhas/Contas Associadas/ContasAssociadas";
+import Diagnosticos from "components/campanhas/Diagnostico/Diagnosticos";
 import VisaoGeral from "components/campanhas/VisaoGeral";
 import GruposCampanha from "components/campanhas/Grupo";
 import Info from "components/campanhas_home/Modal/InfGeral";
