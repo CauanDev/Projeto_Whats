@@ -23,12 +23,10 @@ export default function Campanhas() {
            <Avatar  borderRadius='100%' size='sm' src={user.logo} >
             <AvatarBadge boxSize='15px' bg={user.status? 'green.500':'tomato'} />
             </Avatar>
-
               <Text               
               fontSize="lg"
               pb={2}
-              color="#fff"
-              cursor="pointer">
+              color="#fff">
                 {user.name}
               </Text>
         </Flex>
@@ -52,7 +50,8 @@ export default function Campanhas() {
         </Flex>
       </Box>
 	  <Box p={4}>
-    {componenteAtual}	  </Box>
+      {componenteAtual}	  
+    </Box>
     </>
   );
 }
