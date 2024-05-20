@@ -1,10 +1,14 @@
+import Card from "components/Card/Card"
+
 export default function ExportarLeads(props){
     const {
         id
     } = props
     return(
         <>
-        <h1>Exportar Leads</h1>
-        </>
+        <Card color={'white'}>
+            <Input variant='flushed' placeholder='Digite Nome do Grupo' />
+        </Card>
+                </>
     )
 }

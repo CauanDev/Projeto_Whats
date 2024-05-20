@@ -7,7 +7,6 @@ export default function Alteracao(props){
     } = props
     return(
         <>
-        <Card>
             {tablesTableData.map((item,index)=>{
                 return(
                 <CardGrupo
@@ -29,7 +28,6 @@ export default function Alteracao(props){
            
             
                      
-        </Card>
 
         </>
     )
