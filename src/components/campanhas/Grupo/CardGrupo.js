@@ -1,4 +1,5 @@
 import { Box,Flex,Avatar,Text,Spacer,Input } from "@chakra-ui/react";
+import { BiMouseAlt,BiTargetLock } from "react-icons/bi";
 
 export default function CardGrupo(props){
 
@@ -26,9 +27,28 @@ export default function CardGrupo(props){
                 <Box>
                     <Flex>
                         <Box>
-                            <Flex direction={'column'}>
-                                <Text>Cliques</Text>
-                                <Text>{cliquesAlcançados}/{cliquesMeta}</Text>
+                            <Flex gap={2}>
+                                <Box textAlign="center">
+                                    
+                                    <Text>Cliques</Text>
+                                    <Flex gap='2'>             
+                                        <Text color="white" fontSize={20}>
+                                            <BiMouseAlt />
+                                        </Text>                           
+                                        <Text color="white">{cliquesAlcançados}/{cliquesMeta}</Text>                                    
+                                    </Flex>
+                                </Box>
+
+                                <Box textAlign="center">
+                                    <Text>Cliques Reais</Text>
+                                    <Flex gap='2'>
+                                        <Text>
+                                            <BiTargetLock color="white" size={20}/>
+                                        </Text>
+                                        <Text color="white">{cliquesReais}</Text>                                    
+
+                                    </Flex>
+                                </Box>
                             </Flex>
                         </Box>
                     </Flex>
